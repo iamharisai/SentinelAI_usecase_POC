@@ -1,4 +1,4 @@
-import os
+import os, dotenv
 import pandas as pd
 from typing import TypedDict, List, Dict, Any, Optional
 from langgraph.graph import StateGraph, END
@@ -7,6 +7,7 @@ from langchain_core.messages import HumanMessage, AIMessage
 
 # Set your OpenAI API key here
 # os.environ["OPENAI_API_KEY"] = "sk-......"  # Replace with your actual API key
+dotenv.load_dotenv()
 
 # Initialize our LLM
 model = ChatOpenAI(model="gpt-4o", temperature=0)
